@@ -27,17 +27,17 @@ jobs:
 
       - name: Check kustomize initial
         run: |
-          cd ./clouddrive/Workshop-Azure-Kubernetes-Service-2days/Lab_11/Manifest/ && kubectl kustomize ./base
+          cd ./Lab_11/Manifest/ && kubectl kustomize ./base
 
       - name: Modification du fichier ./Lab_11/Manifest/base/kustomization.yaml
         run: |
-          cd ./clouddrive/Workshop-Azure-Kubernetes-Service-2days/Lab_11/Manifest/base/
+          cd ./Lab_11/Manifest/base/
           sed -i -e "s/mon-namespace/test-kustomize/g" ./kustomization.yaml
           sed -i -e "s/mon-app/http-test-kustomize/g" ./kustomization.yaml
 
       - name: Check kustomize modifié
         run: |
-          cd ./clouddrive/Workshop-Azure-Kubernetes-Service-2days/Lab_11/Manifest/ && kubectl kustomize ./base
+          cd ./Lab_11/Manifest/ && kubectl kustomize ./base
 
       - name: Application de la configuration
         run: echo il ne reste plus ... !
